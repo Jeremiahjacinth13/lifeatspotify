@@ -1,0 +1,157 @@
+
+$spotifyRed: rgba(255, 70, 50, 1);
+$spotifyBlue: rgba(45, 70, 185, 1);
+$spotifyTextColor: #191414;
+$spotifyLightPink: #ffcdd2;
+$spotifyLightGreen: rgba(195, 240, 200, 1);
+$spotifyGreen: #006450;
+$spotifyDarkGreen: #005040;
+$spotifyLightTextColor: #707074;
+$spotifyWhite: #ffffff;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 16px;
+    font-family: Helvetica, sans-serif;
+}
+
+.transparent{
+    opacity: 0.6!important;
+}
+
+section{
+    position: relative;
+    main{
+        padding-right: 5em;
+        padding-left: 5em;
+    }  
+} 
+
+#section-1, #section-2{
+    height: 100vh;
+    max-width: 100vw;
+    padding-top: 65px;
+    background-color: $spotifyRed;
+    background-image: url(../assets/section_background.jpg);
+    background-size: cover;
+    background-position: center;
+    
+    main{
+        color: $spotifyWhite;
+
+        .jobsCount{
+            font-size: 1.5em;
+            margin-top: 4.8em;
+            margin-bottom: 0;
+        }
+        .searchJob{
+            width: calc(100% - 10em);
+            height: 75px;
+            border-radius: 10rem;
+            background: $spotifyRed;
+            padding: 10px;
+            padding-left: 20px;
+            align-items:center;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+
+            .d-flex{
+                height: 100%;
+                width: 100%;
+            }
+            
+            input{
+                background: none;
+                border: none;
+                outline: none;
+                width: 100%;
+                height: 100%;
+                margin-left: 2em;
+
+                &::placeholder{
+                    font-size: 1.3em;
+                    margin: 0;
+                    font-weight: lighter;
+                    color: $spotifyWhite;
+                }
+            }
+
+            button{
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                background: $spotifyWhite;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}
+
+header{
+    .logo img{
+        height: 30px;
+    }
+    .navigations{
+        display: flex;
+        list-style: none;
+        margin: 0px;
+        width: 48%;
+        justify-content: space-between;
+
+    }
+
+    a{
+        font-size: 1.05em;
+        font-weight: 400;
+        color: $spotifyWhite;
+
+        &:hover{
+            color: $spotifyWhite;
+            opacity: 0.6;
+            text-decoration: none;
+        }
+    }
+}
+header.fixed{
+    background: rgba(255, 255, 255, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+
+    a{
+        color: $spotifyTextColor;
+    }
+}
+button.primary{
+    width: 160px;
+    height: 50px;
+    background: $spotifyTextColor;
+    color: $spotifyWhite;
+    border: 1px solid $spotifyTextColor;
+    border-radius: 10rem;
+    outline: none;
+    transition: background 0.2s ease;
+    font-weight: 500;
+
+    &:hover{
+        color: $spotifyTextColor;
+        background: transparent;
+        border: 1px solid $spotifyTextColor;
+    }
+}
+
+#section-2{
+    background: $spotifyLightPink
+}
