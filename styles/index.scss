@@ -17,7 +17,10 @@ $spotifyWhite: #ffffff;
 
 body{
     font-size: 16px;
-    font-family: Helvetica, sans-serif;
+
+    h1{
+        font-size: 3em;
+    }
 }
 
 .transparent{
@@ -26,13 +29,31 @@ body{
 
 section{
     position: relative;
+    transition: background-color 1s ease;
+
+
     main{
         padding-right: 5em;
         padding-left: 5em;
     }  
+    &.pink{
+        background-color: $spotifyLightPink!important;
+    }
+    &.blue{
+        background-color: $spotifyBlue!important;
+    }
+
+    &.white{
+        background-color: $spotifyWhite!important;
+    }
+
+    &.green{
+        background-color: $spotifyLightGreen!important;
+    }
+
 } 
 
-#section-1, #section-2{
+#section-1, #section-2, #section-3{
     height: 100vh;
     max-width: 100vw;
     padding-top: 65px;
@@ -44,10 +65,51 @@ section{
     main{
         color: $spotifyWhite;
 
+        .display-2{
+            font-weight: 400;
+        }
+
         .jobsCount{
             font-size: 1.5em;
             margin-top: 4.8em;
             margin-bottom: 0;
+        }
+        @keyframes moveUp{
+            from{
+                transform: translateY(100px);
+            }
+            to{
+                transform: translateY(-500px);
+            }
+        }
+        .jobCardsContainer{
+            padding-right: 70px;
+            animation: moveUp 17s linear infinite;
+        }
+        .jobCard{
+            background: $spotifyLightGreen;
+            width: 65%;
+            border-radius: 20px;
+            margin-bottom: 100px;
+            color: $spotifyTextColor;
+            transition: all 0.25s ease;
+            cursor: pointer;
+
+            &:hover{
+                transform: scale(1.05);
+            }
+
+            &.right{
+                margin-left: auto;
+                background: $spotifyWhite;
+            }
+            &.center{
+                margin-right: auto;
+                margin-left: auto;
+                background: $spotifyLightPink;
+            }
+
+
         }
         .searchJob{
             width: calc(100% - 10em);
@@ -62,10 +124,11 @@ section{
             bottom: 3rem;
             left: 50%;
             transform: translateX(-50%);
+            border: 1px solid transparent;
 
             .d-flex{
                 height: 100%;
-                width: 100%;
+                width: calc(100% - 55px);
             }
             
             input{
@@ -74,29 +137,44 @@ section{
                 outline: none;
                 width: 100%;
                 height: 100%;
-                margin-left: 2em;
+                margin-left: 1em;
+                font-size: 1.4em;
+                font-weight: 300;
+                color: $spotifyWhite;
 
                 &::placeholder{
-                    font-size: 1.3em;
                     margin: 0;
-                    font-weight: lighter;
                     color: $spotifyWhite;
+                }
+                &:focus{
+                    color: $spotifyTextColor;
                 }
             }
 
-            button{
-                width: 55px;
-                height: 55px;
-                border-radius: 50%;
+            &.focusedin{
                 background: $spotifyWhite;
-                border: none;
-                outline: none;
+                border-color: $spotifyTextColor;
+
+                button{
+                    border-color: $spotifyTextColor;
+                }
+                input::placeholder{
+                    color: $spotifyTextColor;
+                }
             }
         }
     }
 }
 
 header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    transform: translateY(-100%);
+    transition: all 0.3s ease-out;
+
     .logo img{
         height: 30px;
     }
@@ -110,8 +188,8 @@ header{
     }
 
     a{
-        font-size: 1.05em;
-        font-weight: 400;
+        font-size: 1.0em;
+        font-weight: 600;
         color: $spotifyWhite;
 
         &:hover{
@@ -121,28 +199,27 @@ header{
         }
     }
 }
-header.fixed{
-    background: rgba(255, 255, 255, 0.6);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    backdrop-filter: blur(5px);
+header#secondHeader{
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
     z-index: 1000;
-
     a{
         color: $spotifyTextColor;
     }
 }
+
+header.shown{
+    transform: translateY(0%);
+}
 button.primary{
     width: 160px;
-    height: 50px;
+    height: 55px;
     background: $spotifyTextColor;
     color: $spotifyWhite;
     border: 1px solid $spotifyTextColor;
     border-radius: 10rem;
     outline: none;
-    transition: background 0.2s ease;
+    transition: background-color 0.2s ease;
     font-weight: 500;
 
     &:hover{
@@ -151,7 +228,128 @@ button.primary{
         border: 1px solid $spotifyTextColor;
     }
 }
+button.rounded{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $spotifyWhite;
+    border: 1px solid transparent;
+    outline: none;
+}
 
 #section-2{
-    background: $spotifyLightPink
+    @keyframes scale{
+        from{
+            transform: scale(0);
+            transform-origin: center;
+        }
+        to{
+            transform: scale(1);
+            transform-origin: center;
+        }
+    }
+    @keyframes opacity{
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1
+        }
+    }
+
+    background: $spotifyWhite;
+    display: grid;
+    place-content: center;
+    padding: 0;
+
+    main{
+        color: $spotifyTextColor;
+    
+        .tab-button-container{
+            width: 63%;
+            justify-content: space-between;
+            font-weight: 500;
+
+            .tab-button{
+                cursor: pointer;
+                position: relative;
+                opacity: 0.6;
+
+                &.active, &:hover{
+                    opacity:1;
+                    &::after{
+                        animation: scale .3s ease forwards;
+                        position: absolute;
+                        content: '';
+                        bottom: -15px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: $spotifyTextColor;
+                    }
+                }
+            }
+        }
+
+        img{
+            width: 65%;
+            display: block;
+            margin: auto;
+        }
+        .section-2__details{
+            animation: opacity 1.0s ease;
+        }
+    }
+}
+#section-3{
+    background: $spotifyWhite;
+
+    main{
+        padding: 0;
+        overflow: hidden;
+
+        .featured-jobs-container{
+            position: relative;
+            transform: translateX(-50%);
+            justify-content: space-between;
+            left: 50%;
+            display: flex;
+            width: 190%;
+            .featured-job{
+                width: 20%;
+                height: 400px;
+                // background: $spotifyWhite;
+                background: $spotifyLightGreen;
+                border-radius: 20px;
+                opacity: 0.9;
+
+                // &.active{
+                //     opacity: 1;
+                // }
+            }
+
+            .buttons-container{
+                display: flex;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+}
+.lead{
+    font-size: 1.4em;
+}
+.rounded{
+    border-radius: 50%!important;
+}
+.justify-content-evenly{
+    justify-content: space-evenly!important;
 }

@@ -9,8 +9,19 @@
     <title>Join the Band | Life at Spotify</title>
 </head>
 <body>
-    <header class = 'd-flex p-3 px-5 justify-content-between align-items-center fixed' >
-        <a class = "spotify's logo" href=""><img src="/assets/logo_dark.svg" alt="spotify's logo"></a>
+    <header class = 'shown p-3 px-5 justify-content-between align-items-center d-flex' id = 'firstHeader'>
+        <a class = "spotify's logo" href=""><img src="/lifeatspotify/assets/download.svg" alt="spotify's logo"></a>
+        <ul class = 'navigations'>
+            <li><a href="">Locations</a></li>
+            <li><a href="">Being Here</a></li>
+            <li><a href="">Diversity, Equity and Impact</a></li>
+            <li><a href="">Students</a></li>
+            <li><a href="">How we hire</a></li>
+        </ul>
+        <a href="">Get Jobs</a>
+    </header>
+    <header class = 'd-flex p-3 px-5 justify-content-between align-items-center' id="secondHeader" >
+        <a class = "spotify's logo" href=""><img src="/lifeatspotify/assets/logo_dark.svg" alt="spotify's logo"></a>
         <ul class = 'navigations'>
             <li><a href="">Locations</a></li>
             <li><a href="">Being Here</a></li>
@@ -20,38 +31,129 @@
         </ul>
         <a href="">Get Jobs</a>
     </header>    
-    <header class = 'p-3 px-5 justify-content-between align-items-center d-none'>
-            <a class = "spotify's logo" href=""><img src="/assets/download.svg" alt="spotify's logo"></a>
-            <ul class = 'navigations'>
-                <li><a href="">Locations</a></li>
-                <li><a href="">Being Here</a></li>
-                <li><a href="">Diversity, Equity and Impact</a></li>
-                <li><a href="">Students</a></li>
-                <li><a href="">How we hire</a></li>
-            </ul>
-            <a href="">Get Jobs</a>
-        </header>
 
     <section id = "section-1">
-        <main>
-            <p class = 'jobsCount'><span class = 'font-weight-bold'>381</span> <span class = 'transparent font-weight-lighter'>jobs in</span> <span class = 'font-weight-bold'>27</span> <span class = 'transparent font-weight-lighter'>locations</span></p>
-            <h1 class = 'display-2 mb-4'>Join the band</h1>
-            <button class = 'primary'>
-                Explore all jobs
-            </button>
+        <main class = 'row m-0'>
+            <div class = 'col-6'>
+                <p class = 'jobsCount'><span class = 'font-weight-bold'>381</span> <span class = 'transparent font-weight-lighter'>jobs in</span> <span class = 'font-weight-bold'>27</span> <span class = 'transparent font-weight-lighter'>locations</span></p>
+                <h1 class = 'display-2 mb-4'>Join the band</h1>
+                <button class = 'primary'>
+                    Explore all jobs
+                </button>
+            </div>
+            <div class = 'col-6 jobCardsContainer'>
+                <div class="jobCard p-4 left">
+                    <p class="m-0 font-weight-bold transparent mb-2">Stockholm</p>
+                    <p class="lead m-0">C++ Engineer, Player Features & Framework</p>
+                </div>
+                <div class="jobCard p-4 right">
+                    <p class="m-0 font-weight-bold transparent mb-2">Lagos</p>
+                    <p class="lead m-0">C++ Engineer, Desktop</p>
+                </div>
+                <div class="jobCard p-4 center">
+                    <p class="m-0 font-weight-bold transparent mb-2">Germany</p>
+                    <p class="lead m-0">Account Direction, Entertainment</p>
+                </div>
+                <div class="jobCard p-4 left">
+                    <p class="m-0 font-weight-bold transparent mb-2">San Fransisco</p>
+                    <p class="lead m-0">Manager, Music Industry Communication</p>
+                </div>
+            </div>
             <div class = 'searchJob d-flex'>
                 <div class = 'd-flex align-items-center'>
-                    <img src="assets/search-light.svg" alt="">
+                    <img src="assets/search-light.svg" alt="search icon" id = "searchIcon">
                     <input type="text" name="job title" id="" placeholder="Search jobs and keywords"/>
                 </div>
-                <button>
+                <button class = 'rounded'>
                     <img src="assets/arrow_right_black.svg" alt="">
                 </button>
             </div>
         </main>
     </section>
     <section id="section-2">
-
+        <main>
+            <div class = 'row'>
+                <div class = 'col-6'></div>
+                <div class = 'col-6'>
+                    <div class="d-flex tab-button-container">
+                        <p class="tab-button active">Who we are</p>
+                        <p class="tab-button">Our culture</p>
+                        <p class="tab-button">Equity & Impact</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row section-2__details align-items-center">
+                <div class="col-6">
+                    <img src="/lifeatspotify/assets/section2 svg1.svg" alt="">
+                </div>
+                <div class="col-6">
+                    <h1 class = 'mb-3'>One band, no solo artists</h1>
+                    <p class="lead mb-4">It’s our culture. It’s our values. It’s who we are and what we’re not. It’s why we do things the way we do and why that matters. It’s all here in our band manifesto.</p>
+                    <button class="primary">Read more</button>
+                </div>
+            </div>
+            <div class="row section-2__details align-items-center d-none">
+                <div class="col-6">
+                    <img src="/lifeatspotify/assets/section2 svg2.svg" alt="">
+                </div>
+                <div class="col-6">
+                    <h1 class = 'mb-3'>Everyone as a part to play</h1>
+                    <p class="lead mb-4">We don't just want you to feel like you belong here, we want you to feel like you can thrive here. No two creators or listeners are the same, so at Spotify neither are we.</p>
+                    <button class="primary">Read more</button>
+                </div>
+            </div>
+            <div class="row section-2__details align-items-center d-none">
+                <div class="col-6">
+                    <img src="/lifeatspotify/assets/section2 svg3.svg" alt="">
+                </div>
+                <div class="col-6">
+                    <h1 class = 'mb-3'>Nine to five? No thanks</h1>
+                    <p class="lead mb-4">Clock on, clock off just isn't our vibe. We want you to feel like you can come to work with a spring in your step, passion for what you do, and the desire to keep growing</p>
+                    <button class="primary">Read more</button>
+                </div>
+            </div>
+        </main>
+    </section>
+    <section id="section-3">
+        <h1 class="text-center">Featured Jobs</h1>
+        <main>
+            <div class="featured-jobs-container">
+                <div class="featured-job">
+                    <div class="job-tag">Finance</div>
+                    <div class="job-post">Pricing & Yield Analyst</div>
+                    <div class="job-post transparent">Pricing & Yield Analyst</div>
+                    <div class="job-location">New York</div>
+                </div>
+                <div class="featured-job active">
+                    <div class="job-tag">Global Affairs</div>
+                    <div class="job-post">Pricing & Yield Analyst</div>
+                    <div class="job-post transparent">Pricing & Yield Analyst</div>
+                    <div class="job-location">New York</div>
+                </div>
+                <div class="featured-job active">
+                    <div class="job-tag">Content</div>
+                    <div class="job-post">Senior User Researcher</div>
+                    <div class="job-post transparent">Creator Promotion</div>
+                    <div class="job-location">New York</div>
+                </div>
+                <div class="featured-job active">
+                    <div class="job-tag">Product</div>
+                    <div class="job-post">Group Product Manager</div>
+                    <div class="job-post transparent">Customer Support Platform</div>
+                    <div class="job-location">London</div>
+                </div>
+                <div class="featured-job active">
+                    <div class="job-tag">Content</div>
+                    <div class="job-post">Product Insights Manager</div>
+                    <div class="job-post transparent">Content Platform Catalog</div>
+                    <div class="job-location">London</div>
+                </div>
+                <div class="buttons-container justify-content-evenly w-100">
+                    <button class="rounded"><img style = 'transform: rotate(180deg);'src="/lifeatspotify/assets/arrow_right_black.svg" alt=""></button>
+                    <button class="rounded"><img src="/lifeatspotify/assets/arrow_right_black.svg" alt=""></button>
+                </div>
+            </div>
+        </main>
     </section>
     <script src="javascript/main.js"></script>
 </body>
